@@ -17,12 +17,11 @@
     </author>
     
     <!-- Android only -->
-    <preference name="android-build-tool" value="ant|gradle" />
-    <preference name="android-minSdkVersion" value="19" />
-    <preference name="android-maxSdkVersion" value="25" />
-    <preference name="android-targetSdkVersion" value="21" />
-    <preference name="android-installLocation" value="auto" />
-    <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
+    <preference name="android-minSdkVersion" value="23" />
+    
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+        <permission android:description="CAMERA" />
+    </config-file>
     
     <!-- <plugin name="https://github.com/apache/cordova-plugin-network-information" /> -->
     <!-- <plugin name="https://github.com/apache/cordova-plugin-camera" /> -->
