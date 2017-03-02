@@ -21,15 +21,17 @@
     <!-- <preference name="android-minSdkVersion" value="23" /> -->
     <!-- <preference name="android-installLocation" value="auto" /> -->
     
-    <!-- <config-file target="AndroidManifest.xml" parent="/manifest">
-        <permission android:description="CAMERA" />
-    </config-file> -->
-    <config-file platform="android" parent="/manifest" mode="merge">
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+        <uses-permission android:name="android.permission.CAMERA" />
+        <uses-feature android:name="android.hardware.camera" />
+        <uses-feature android:name="android.hardware.camera.autofocus" />
+    </config-file>
+    <!-- <config-file platform="android" parent="/manifest" mode="merge">
       <supports-screens
         android:xlargeScreens="false"
         android:largeScreens="false"
         android:smallScreens="false" />
-    </config-file>
+    </config-file> -->
     
     <!-- <plugin name="https://github.com/apache/cordova-plugin-network-information" /> -->
     <!-- <plugin name="https://github.com/apache/cordova-plugin-camera" /> -->
