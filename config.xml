@@ -26,7 +26,7 @@
     </platform>
     
     <plugin name="cordova-plugin-camera" />
-    <plugin name="https://github.com/dpa99c/cordova-diagnostic-plugin" />
-    <plugin name="https://github.com/pbakondy/cordova-plugin-sim" />
+    <plugin name="https://github.com/dpa99c/cordova-diagnostic-plugin.git" />
+    <plugin name="https://github.com/pbakondy/cordova-plugin-sim.git" />
     
 </widget>
