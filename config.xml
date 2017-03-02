@@ -25,8 +25,7 @@
         <preference name="android-targetSdkVersion" value="22" />
     </platform>
     
-    <plugin name="https://github.com/NeoLSN/cordova-plugin-android-permission" />
-    <plugin name="https://github.com/apache/cordova-plugin-camera" />
+    <plugin name="org.apache.cordova.camera" />
     <plugin name="https://github.com/dpa99c/cordova-diagnostic-plugin" />
     <plugin name="https://github.com/pbakondy/cordova-plugin-sim" />
     
