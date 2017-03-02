@@ -22,8 +22,7 @@
     <!-- Android only -->
     <platform name="android">
         <preference name="android-minSdkVersion" value="16" />
-        <preference name="android-targetSdkVersion" value="23" />
-        <preference name="Fullscreen" value="true" />
+        <preference name="android-targetSdkVersion" value="22" />
     </platform>
     
     <plugin name="https://github.com/NeoLSN/cordova-plugin-android-permission" />
