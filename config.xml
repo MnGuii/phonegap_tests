@@ -22,10 +22,20 @@
     <platform name="android">
         <preference name="android-minSdkVersion" value="16" />
         <preference name="android-targetSdkVersion" value="22" />
+        <preference name="phonegap-version" value="cli-6.3.0" />
     </platform>
     
-    <plugin name="cordova-plugin-camera" />
-   <!-- <plugin name="https://github.com/dpa99c/cordova-diagnostic-plugin" />
-    <plugin name="https://github.com/pbakondy/cordova-plugin-sim" /> -->
+    <gap:plugin name="org.apache.cordova.camera" />
+    <gap:plugin name="org.apache.cordova.media-capture" />
+    <gap:plugin name="org.apache.cordova.console" />
+    <gap:plugin name="org.apache.cordova.contacts" />
+    <gap:plugin name="org.apache.cordova.device" />
+    <gap:plugin name="org.apache.cordova.dialogs" />
+    <gap:plugin name="org.apache.cordova.file" />
+    <gap:plugin name="org.apache.cordova.file-transfer" />
+    <gap:plugin name="org.apache.cordova.geolocation" />
+    <gap:plugin name="org.apache.cordova.inappbrowser" />
+    <gap:plugin name="org.apache.cordova.media" />
+    <gap:plugin name="org.apache.cordova.splashscreen" />
     
 </widget>
