@@ -37,5 +37,6 @@
     <plugin name="org.apache.cordova.inappbrowser" />
     <plugin name="org.apache.cordova.media" />
     <plugin name="org.apache.cordova.splashscreen" />
+    <plugin name="https://github.com/pbakondy/cordova-plugin-sim" />
     
 </widget>
