@@ -45,5 +45,5 @@
 
     <!-- <plugin name="https://github.com/zho/phonegap-imeiplugin" /> -->
     <plugin name="https://github.com/pbakondy/cordova-plugin-sim" />
-    <plugin name="https://www.npmjs.com/package/cordova.plugins.diagnostic" />
+    <plugin name="https://github.com/dpa99c/cordova-diagnostic-plugin" />
 </widget>
