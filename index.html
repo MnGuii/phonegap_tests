@@ -27,11 +27,19 @@
      // window.plugins.sim.requestReadPermission(successCallback, errorCallback);
     }
     
-    function camera(param) {
+    function album() {
       navigator.camera.getPicture(onSuccess, onFail,
       {
           destinationType: Camera.DestinationType.FILE_URI,
           sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+          popoverOptions: new CameraPopoverOptions(300, 300, 100, 100, Camera.PopoverArrowDirection.ARROW_ANY)
+      });
+    }
+    function camera() {
+      navigator.camera.getPicture(onSuccess, onFail,
+      {
+          destinationType: Camera.DestinationType.FILE_URI,
+          sourceType: Camera.PictureSourceType.CAMERA,
           popoverOptions: new CameraPopoverOptions(300, 300, 100, 100, Camera.PopoverArrowDirection.ARROW_ANY)
       });
     }
@@ -46,7 +54,7 @@
 </head>
 <body>
   <button onclick="window.location='index.html';">reload</button>
-  <button onclick="camera('CAMERA');">camera</button>
-  <button onclick="camera('PHOTOLIBRARY');">library</button>
+  <button onclick="camera();">camera</button>
+  <button onclick="album();">library</button>
 </body>
 </html>
