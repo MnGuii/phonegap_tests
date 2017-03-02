@@ -2,12 +2,12 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"
     xmlns:gap   = "http://phonegap.com/ns/1.0"
     xmlns:android = "http://schemas.android.com/apk/res/android"
-    id          = "com.phonegap.example21"
+    id          = "com.phonegap.example22"
     version     = "1.0.1" >
 
     <!-- versionCode is optional and Android only -->
 
-    <name>Teste-21</name>
+    <name>Teste-22</name>
 
     <description>
         An example for phonegap build docs.
@@ -18,7 +18,7 @@
     </author>
     
     <!-- Android only -->
-    <preference name="android-minSdkVersion" value="21" />
+    <preference name="android-minSdkVersion" value="22" />
     <!-- <preference name="android-installLocation" value="auto" /> -->
     
     <config-file target="AndroidManifest.xml" parent="/manifest">
