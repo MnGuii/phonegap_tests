@@ -17,14 +17,14 @@
       Hardeep Shoker
   </author>
     
-    <plugin name="https://github.com/apache/cordova-plugin-camera" />
+    <!-- <plugin name="https://github.com/apache/cordova-plugin-camera" /> -->
     <plugin name="https://github.com/apache/cordova-plugin-battery-status" />
-    <plugin name="https://github.com/apache/cordova-plugin-contacts" />
+    <!-- <plugin name="https://github.com/apache/cordova-plugin-contacts" /> -->
     <plugin name="https://github.com/apache/cordova-plugin-device" />
-    <plugin name="https://github.com/apache/cordova-plugin-geolocation" />
+    <!-- <plugin name="https://github.com/apache/cordova-plugin-geolocation" /> -->
     <plugin name="https://github.com/apache/cordova-plugin-media" />
     <plugin name="https://github.com/apache/cordova-plugin-media-capture" />
     <plugin name="https://github.com/apache/cordova-plugin-network-information" />
-    <plugin name="https://github.com/apache/cordova-plugin-vibration" />
+    <!-- <plugin name="https://github.com/apache/cordova-plugin-vibration" /> -->
 
 </widget>
