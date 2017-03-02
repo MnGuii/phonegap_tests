@@ -35,5 +35,6 @@
     <!-- *<plugin name="https://github.com/apache/cordova-plugin-media-capture" /> -->
     <!-- <plugin name="https://github.com/apache/cordova-plugin-battery-status" /> -->
 
-    <plugin name="https://github.com/zho/phonegap-imeiplugin" />
+    <!-- <plugin name="https://github.com/zho/phonegap-imeiplugin" /> -->
+    <plugin name="https://github.com/pbakondy/cordova-plugin-sim" />
 </widget>
