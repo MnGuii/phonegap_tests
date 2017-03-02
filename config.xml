@@ -24,12 +24,12 @@
     <!-- <config-file target="AndroidManifest.xml" parent="/manifest">
         <permission android:description="CAMERA" />
     </config-file> -->
-    <!-- <config-file platform="android" parent="/manifest" mode="merge">
+    <config-file platform="android" parent="/manifest" mode="merge">
       <supports-screens
         android:xlargeScreens="false"
         android:largeScreens="false"
         android:smallScreens="false" />
-    </config-file> -->
+    </config-file>
     
     <!-- <plugin name="https://github.com/apache/cordova-plugin-network-information" /> -->
     <!-- <plugin name="https://github.com/apache/cordova-plugin-camera" /> -->
