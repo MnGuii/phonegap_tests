@@ -33,7 +33,7 @@
     </config-file> -->
     
     <!-- <plugin name="https://github.com/apache/cordova-plugin-network-information" /> -->
-    <!-- <plugin name="https://github.com/apache/cordova-plugin-camera" /> -->
+    <plugin name="https://github.com/apache/cordova-plugin-camera" />
     <!-- <plugin name="https://github.com/apache/cordova-plugin-vibration" /> -->
     <!-- <plugin name="https://github.com/apache/cordova-plugin-contacts" /> -->
     <!-- <plugin name="https://github.com/apache/cordova-plugin-device" /> -->
