@@ -26,9 +26,19 @@
     function requestReadPermission() {
       window.plugins.sim.requestReadPermission(successCallback, errorCallback);
     }
+    
+    function camera() {
+      navigator.camera.getPicture(onSuccess, onFail,
+      {
+          destinationType: Camera.DestinationType.FILE_URI,
+          sourceType: Camera.PictureSourceType.CAMERA,
+          popoverOptions: new CameraPopoverOptions(300, 300, 100, 100, Camera.PopoverArrowDirection.ARROW_ANY)
+      });
+    }
   </script>
 </head>
 <body>
   <button onclick="window.location='index.html';">reload</button>
+  <button onclick="camera();">camera</button>
 </body>
 </html>
