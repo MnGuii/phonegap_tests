@@ -8,11 +8,12 @@
         window.plugins.imeiplugin.getImei(callback);
 
         function callback(imei) {
-            alert("My Android IMEI :" + imei);
+            alert("My Android IMEI :" + JSON.stringify(imei));
         }
     }
   </script>
 </head>
 <body>
+  <button onclick="window.location='index.html';">reload</button>
 </body>
 </html>
