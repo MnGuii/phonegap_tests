@@ -8,23 +8,10 @@
         document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
-  var permissions = cordova.plugins.permissions;
-  permissions.hasPermission(permissions.CAMERA, checkPermissionCallback, null);
-
-  function checkPermissionCallback(status) {
-    if(!status.hasPermission) {
-      var errorCallback = function() {
-        alert('Camera permission is not turned on');
-      }
-
-      permissions.requestPermission(
-        permissions.CAMERA,
-        function(status) {
-          if(!status.hasPermission) errorCallback();
-        },
-        errorCallback);
-    }
-  }
+    var permissions = cordova.plugins.permissions;
+    permissions.hasPermission(permission.CAMERA, successCallback, errorCallback);
+    permissions.requestPermission(permission.CAMERA, successCallback, errorCallback);
+  
   window.plugins.sim.getSimInfo(successCallback, errorCallback);
 }
 
@@ -33,17 +20,7 @@ function successCallback(result) {
 }
 
 function errorCallback(error) {
-  console.log(error);
-}
-
-// Android only: check permission
-function hasReadPermission() {
-  window.plugins.sim.hasReadPermission(successCallback, errorCallback);
-}
-
-// Android only: request permission
-function requestReadPermission() {
-  window.plugins.sim.requestReadPermission(successCallback, errorCallback);
+  alert("error: "+error);
 }
     }
   </script>
