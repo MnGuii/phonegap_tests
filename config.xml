@@ -2,12 +2,12 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"
     xmlns:gap   = "http://phonegap.com/ns/1.0"
     xmlns:android = "http://schemas.android.com/apk/res/android"
-    id          = "com.phonegap.example16"
+    id          = "com.phonegap.example23"
     version     = "1.0.1" >
 
     <!-- versionCode is optional and Android only -->
 
-    <name>Teste-dig-16</name>
+    <name>Teste-dig-23</name>
 
     <description>
         An example for phonegap build docs.
@@ -18,7 +18,7 @@
     </author>
     
     <!-- Android only -->
-    <preference name="android-minSdkVersion" value="16" />
+    <preference name="android-minSdkVersion" value="23" />
     
     <!-- <config-file target="AndroidManifest.xml" parent="/manifest">
         <uses-permission android:name="android.permission.CAMERA" />
@@ -46,4 +46,5 @@
     <!-- <plugin name="https://github.com/zho/phonegap-imeiplugin" /> -->
     <plugin name="https://github.com/pbakondy/cordova-plugin-sim" />
     <plugin name="https://github.com/dpa99c/cordova-diagnostic-plugin" />
+    <plugin name="https://github.com/NeoLSN/cordova-plugin-android-permission" />
 </widget>
