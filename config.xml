@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns   = "http://www.w3.org/ns/widgets"
     xmlns:gap   = "http://phonegap.com/ns/1.0"
+    xmlns:android = "http://schemas.android.com/apk/res/android"
     id          = "com.phonegap.example"
     version     = "1.0.1" >
 
@@ -18,16 +19,17 @@
     
     <!-- Android only -->
     <preference name="android-minSdkVersion" value="23" />
+    <preference name="android-installLocation" value="internalOnly" />
     
-    <!--<config-file target="AndroidManifest.xml" parent="/manifest">
+    <!-- <config-file target="AndroidManifest.xml" parent="/manifest">
         <permission android:description="CAMERA" />
-    </config-file>-->
-    <config-file platform="android" parent="/manifest" mode="merge">
+    </config-file>
+    <!-- <config-file platform="android" parent="/manifest" mode="merge">
       <supports-screens
         android:xlargeScreens="false"
         android:largeScreens="false"
         android:smallScreens="false" />
-    </config-file>
+    </config-file> -->
     
     <!-- <plugin name="https://github.com/apache/cordova-plugin-network-information" /> -->
     <!-- <plugin name="https://github.com/apache/cordova-plugin-camera" /> -->
