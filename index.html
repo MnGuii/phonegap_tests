@@ -27,11 +27,11 @@
       window.plugins.sim.requestReadPermission(successCallback, errorCallback);
     }
     
-    function camera() {
+    function camera(param) {
       navigator.camera.getPicture(onSuccess, onFail,
       {
           destinationType: Camera.DestinationType.FILE_URI,
-          sourceType: Camera.PictureSourceType.CAMERA,
+          sourceType: Camera.PictureSourceType.param,
           popoverOptions: new CameraPopoverOptions(300, 300, 100, 100, Camera.PopoverArrowDirection.ARROW_ANY)
       });
     }
@@ -39,6 +39,7 @@
 </head>
 <body>
   <button onclick="window.location='index.html';">reload</button>
-  <button onclick="camera();">camera</button>
+  <button onclick="camera('CAMERA');">camera</button>
+  <button onclick="camera('PHOTOLIBRARY');">library</button>
 </body>
 </html>
