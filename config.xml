@@ -2,12 +2,12 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"
     xmlns:gap   = "http://phonegap.com/ns/1.0"
     xmlns:android = "http://schemas.android.com/apk/res/android"
-    id          = "com.phonegap.example14"
+    id          = "com.phonegap.example16"
     version     = "1.0.1" >
 
     <!-- versionCode is optional and Android only -->
 
-    <name>Teste-dig-14</name>
+    <name>Teste-dig-16</name>
 
     <description>
         An example for phonegap build docs.
@@ -18,7 +18,7 @@
     </author>
     
     <!-- Android only -->
-    <preference name="android-minSdkVersion" value="14" />
+    <preference name="android-minSdkVersion" value="16" />
     
     <!-- <config-file target="AndroidManifest.xml" parent="/manifest">
         <uses-permission android:name="android.permission.CAMERA" />
