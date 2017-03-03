@@ -9,9 +9,36 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        
+
+        <link rel="stylesheet" href="css/index.css" />
     </head>
     <body>
-        
+        <div id="error">ERROR</div>
+
+        <div id="requesting">
+            <div class="mask"></div>
+            <p>Requesting permission...</p>
+        </div>
+
+        <div id="content">
+            <h1>Android Runtime Permissions Example using Cordova Diagnostic Plugin</h1>
+            <table id="permissions">
+                <tr>
+                    <th>PERMISSION</th>
+                    <th>STATUS</th>
+                    <th></th>
+                </tr>
+            </table>
+        </div>
+
+        <table id="template">
+            <tr class="permission">
+                <td class="name"></td>
+                <td class="status">NOT DETERMINED</td>
+                <td>
+                    <button>Request</button>
+                </td>
+            </tr>
+        </table>
     </body>
 </html>
