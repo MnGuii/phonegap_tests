@@ -16,7 +16,7 @@
     <plugin name="cordova-plugin-whitelist" spec="*" />
     <plugin name="cordova-plugin-device" spec="*" />
     <plugin name="cordova-plugin-dialogs" spec="*" />
-    <plugin name="cordova-custom-config" spec="*" />
+    <!-- <plugin name="cordova-custom-config" spec="*" /> -->
     <plugin name="cordova.plugins.diagnostic" spec="2" />
 
     <platform name="android">
@@ -27,7 +27,7 @@
             All the "dangerous" permissions in API 23
             See http://developer.android.com/guide/topics/security/permissions.html#perm-groups
         -->
-        <config-file plataform="android" parent="/manifest" mode="merge">
+        <config-file plataform="android" parent="/manifest" mode="add">
             <uses-permission android:name="android.permission.READ_CALENDAR" />
             <!--
                 Omit this permission for demonstration purposes
