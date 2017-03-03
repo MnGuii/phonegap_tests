@@ -1,15 +1,15 @@
 var allPermissions = [];
 
 function onDeviceReady() {
-    if(device.platform != "Android"){
-        showAlert("Wrong OS", "This example is specifically designed to illustrate runtime permissions on Android 6+, so it will not work on "+device.platform);
-        $('body').addClass('error');
-        return;
+    window.plugins.uniqueDeviceID.get(success, fail);
+    function success(uuid)
+    {
+        alert("UniqueID: " + uuid + "\nUUID Devide: "+ device.uuid);
     }
-    if(parseInt(device.version) < 6){
-        showAlert("Wrong Android version", "This example is specifically designed to illustrate runtime permissions on Android 6+, but on this version of Android ("+device.version+"), all permissions will be allocated at installation time based on the manifest.");
+    function fail(error)
+    {
+        alert(JSON.stringify(error));
     }
-    init();
 }
 
 function init(){
