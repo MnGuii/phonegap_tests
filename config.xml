@@ -10,26 +10,24 @@
     <author email="dave@workingedge.co.uk" href="http://www.workingedge.co.uk/dave">
         Dave Alden
     </author>
-    <content src="index.html" />
-    <access origin="*" />
+    
+    <platform name="android" />
 
-    <preference name="Fullscreen" value="false" />
-
-    <plugin name="cordova-plugin-whitelist" />
-    <plugin name="cordova-plugin-device" version="*" />
-    <plugin name="cordova-plugin-dialogs" version="*"/>
-    <plugin name="cordova-custom-config" version="*"/>
-    <plugin name="cordova.plugins.diagnostic" version="2" />
+    <plugin name="cordova-plugin-whitelist" spec="*" />
+    <plugin name="cordova-plugin-device" spec="*" />
+    <plugin name="cordova-plugin-dialogs" spec="*" />
+    <plugin name="cordova-custom-config" spec="*" />
+    <plugin name="cordova.plugins.diagnostic" spec="2" />
 
     <platform name="android">
         <preference name="android-minSdkVersion" value="20" /> <!-- For BODY_SENSORS permission -->
         <preference name="android-targetSdkVersion" value="23" />
-
+        <preference name="Fullscreen" value="false" />
         <!--
             All the "dangerous" permissions in API 23
             See http://developer.android.com/guide/topics/security/permissions.html#perm-groups
         -->
-        <config-file target="AndroidManifest.xml" parent="/*">
+        <config-file plataform="android" parent="/manifest" mode="merge">
             <uses-permission android:name="android.permission.READ_CALENDAR" />
             <!--
                 Omit this permission for demonstration purposes
@@ -64,5 +62,7 @@
             <uses-permission android:name="android.permission.BODY_SENSORS" />
         </config-file>
     </platform>
-
+    
+    <content src="index.html" />
+    <access origin="*" />
 </widget>
