@@ -15,13 +15,12 @@ function onDeviceReady() {
 function init(){
     var $permissions = $('#permissions');
     for(var permission in cordova.plugins.diagnostic.runtimePermission){
-        //var $permission = $('#template .permission').clone();
-        //$permission.addClass(permission);
-        //$permission.find('.name').text(underscoreToSpace(permission));
-        //$permissions.append($permission);
-        //$permission.find('button').on("click", requestPermission);
-        //allPermissions.push(permission);
-		allPermissions.push(permission);
+        var $permission = $('#template .permission').clone();
+        $permission.addClass(permission);
+        $permission.find('.name').text(underscoreToSpace(permission));
+        $permissions.append($permission);
+        $permission.find('button').on("click", requestPermission);
+        allPermissions.push(permission);
     }
     checkPermissions();
 }
@@ -44,10 +43,12 @@ function checkPermissions(){
 
 function onCheckPermissions(statuses){
     for(var permission in statuses){
-        if(statuses[permission] != "GRANTED" && statuses[permission] != "DENIED_ALWAYS"){
-            requestPermission();
+        var $permission = $('#permissions .'+permission),
+            status = statuses[permission];
+        $permission.find('.status').text(underscoreToSpace(status));
+        if(status == "GRANTED" || status == "DENIED_ALWAYS"){
+            $permission.find('button').hide();
         }
-		alert(JSON.stringify(statuses));
     }
 }
 
