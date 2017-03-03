@@ -1,50 +1,39 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <script src="cordova.js"></script>
-  <script>
-    document.addEventListener("deviceready", onDeviceReady, false);
-    
-    function onDeviceReady() {
-      window.plugins.sim.getSimInfo(successCallback, errorCallback);
-    }
+    <head>
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 
-    function successCallback(result) {
-      alert(JSON.stringify(result));
-    }
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
 
-    function errorCallback(error) {
-      alert(JSON.stringify(error));
-    }
-    
-    function album() {
-      navigator.camera.getPicture(onSuccess, onFail,
-      {
-          destinationType: Camera.DestinationType.FILE_URI,
-          sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
-          popoverOptions: new CameraPopoverOptions(300, 300, 100, 100, Camera.PopoverArrowDirection.ARROW_ANY)
-      });
-    }
-    function camera() {
-      navigator.camera.getPicture(onSuccess, onFail,
-      {
-          destinationType: Camera.DestinationType.FILE_URI,
-          sourceType: Camera.PictureSourceType.CAMERA,
-          popoverOptions: new CameraPopoverOptions(300, 300, 100, 100, Camera.PopoverArrowDirection.ARROW_ANY)
-      });
-    }
-    function onSuccess() {
-        alert("Camera ok.")
-    }
+    </head>
+    <body>
+        <div id="error">ERROR</div>
 
-    function onFail(message) {
-        alert('Failed because: ' + message);
-    }
-  </script>
-</head>
-<body>
-  <button onclick="window.location='index.html';">reload</button>
-  <button onclick="camera();">camera</button>
-  <button onclick="album();">library</button>
-</body>
+        <div id="requesting">
+            <div class="mask"></div>
+            <p>Requesting permission...</p>
+        </div>
+
+        <div id="content">
+            <h1>Android Runtime Permissions Example using Cordova Diagnostic Plugin</h1>
+            <table id="permissions">
+                <tr>
+                    <th>PERMISSION</th>
+                    <th>STATUS</th>
+                    <th></th>
+                </tr>
+            </table>
+        </div>
+
+        <table id="template">
+            <tr class="permission">
+                <td class="name"></td>
+                <td class="status">NOT DETERMINED</td>
+                <td>
+                    <button>Request</button>
+                </td>
+            </tr>
+        </table>
+    </body>
 </html>
