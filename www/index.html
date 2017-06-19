@@ -1,44 +1,255 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-    <head>
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-
-        <link rel="stylesheet" href="css/index.css" />
-    </head>
-    <body>
-        <div id="error">ERROR</div>
-
-        <div id="requesting">
-            <div class="mask"></div>
-            <p>Requesting permission...</p>
-        </div>
-
-        <div id="content">
-            <h1>Android Runtime Permissions Example using Cordova Diagnostic Plugin</h1>
-            <table id="permissions">
-                <tr>
-                    <th>PERMISSION</th>
-                    <th>STATUS</th>
-                    <th></th>
-                </tr>
-            </table>
-        </div>
-
-        <table id="template">
-            <tr class="permission">
-                <td class="name"></td>
-                <td class="status">NOT DETERMINED</td>
-                <td>
-                    <button>Request</button>
-                </td>
-            </tr>
-        </table>
-    </body>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<script>
+window.onerror = function(msg, url, linenumber) {
+    navigator.notification.alert('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
+	console.log('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
+    return true;
+}
+</script>
+<script>
+	if (navigator.userAgent.toLowerCase().match(/crosswalk/)) {
+		// Android - Versão 4.4.2
+		document.write('<script charset="utf-8" src="/clientes_direto/phonegap/cli-6.3.0/android/cordova.js" onload="javascript:window.isCordovaApp = true;"><\/script>');
+	} 
+	else if (navigator.userAgent.toLowerCase().match(/android/)) {
+		// Android - Versão acima de 4.4.2
+		document.write('<script charset="utf-8" src="/clientes_direto/phonegap/cli-6.3.0/android/cordova.js" onload="javascript:window.isCordovaApp = true;"><\/script>');
+	}
+	else if (navigator.userAgent.toLowerCase().match(/iphone/) || navigator.userAgent.toLowerCase().match(/ipad/) || navigator.userAgent.toLowerCase().match(/ipod/) || navigator.userAgent.toLowerCase().match(/ios/)) {
+		// IOS
+		document.write('<script charset="utf-8" src="/clientes_direto/phonegap/cli-6.3.0/ios/cordova.js" onload="javascript:window.isCordovaApp = true;"><\/script>');
+	}
+	
+	document.addEventListener("deviceready", onDeviceReady, false);
+	
+	function onDeviceReady() {
+		checkPermissions();
+	}
+	function openSettings() {
+		navigator.notification.alert(
+			"Você deve habilitar todas as permissões para continuar.",
+			function(){
+				cordova.plugins.diagnostic.switchToSettings();openSettings();
+			},
+			"",
+			"OK"
+		);
+	}
+	function goToApp() {
+		window.location = "https://google.com.br";
+	}
+	function checkLocation() {
+		cordova.plugins.diagnostic.getLocationAuthorizationStatus(function(status){
+			switch(status){
+				case cordova.plugins.diagnostic.permissionStatus.NOT_REQUESTED:
+					cordova.plugins.diagnostic.requestLocationAuthorization(function(status) {
+						checkLocation();
+					}, function(error) {
+						navigator.notification.alert(
+							"Ocorreu algum erro e a aplicação será fechada.",
+							function(){ navigator.app.exitApp(); },
+							"",
+							"OK"
+						);
+					});
+					break;
+				case cordova.plugins.diagnostic.permissionStatus.DENIED:
+					openSettings();
+					break;
+				case cordova.plugins.diagnostic.permissionStatus.GRANTED:
+					checkContacts();
+					break;
+				case cordova.plugins.diagnostic.permissionStatus.GRANTED_WHEN_IN_USE:
+					checkContacts();
+					break;
+			}
+		}, function(error){
+			navigator.notification.alert(
+				"Ocorreu algum erro e a aplicação será fechada.",
+				function(){ navigator.app.exitApp(); },
+				"",
+				"OK"
+			);
+		});
+	}
+	function checkContacts() {
+		cordova.plugins.diagnostic.getContactsAuthorizationStatus(function(status){
+			switch(status){
+				case cordova.plugins.diagnostic.permissionStatus.NOT_REQUESTED:
+					cordova.plugins.diagnostic.requestContactsAuthorization(function(status) {
+						checkContacts();
+					}, function(error) {
+						navigator.notification.alert(
+							"Ocorreu algum erro e a aplicação será fechada.",
+							function(){ navigator.app.exitApp(); },
+							"",
+							"OK"
+						);
+					});
+					break;
+				case cordova.plugins.diagnostic.permissionStatus.DENIED:
+					openSettings();
+					break;
+				case cordova.plugins.diagnostic.permissionStatus.GRANTED:
+					checkCamera();
+					break;
+			}
+		}, function(error){
+			navigator.notification.alert(
+				"Ocorreu algum erro e a aplicação será fechada.",
+				function(){ navigator.app.exitApp(); },
+				"",
+				"OK"
+			);
+		});
+	}
+	function checkCamera() {
+		cordova.plugins.diagnostic.getCameraAuthorizationStatus(function(status){
+			switch(status){
+				case cordova.plugins.diagnostic.permissionStatus.NOT_REQUESTED:
+					cordova.plugins.diagnostic.requestCameraAuthorization(function(status) {
+						checkCamera();
+					}, function(error) {
+						navigator.notification.alert(
+							"Ocorreu algum erro e a aplicação será fechada.",
+							function(){ navigator.app.exitApp(); },
+							"",
+							"OK"
+						);
+					});
+					break;
+				case cordova.plugins.diagnostic.permissionStatus.DENIED:
+					openSettings();
+					break;
+				case cordova.plugins.diagnostic.permissionStatus.GRANTED:
+					checkAlbum();
+					break;
+			}
+		}, function(error){
+			navigator.notification.alert(
+				"Ocorreu algum erro e a aplicação será fechada.",
+				function(){ navigator.app.exitApp(); },
+				"",
+				"OK"
+			);
+		});
+	}
+	function checkAlbum() {
+		cordova.plugins.diagnostic.getCameraRollAuthorizationStatus(function(status){
+			switch(status){
+				case cordova.plugins.diagnostic.permissionStatus.NOT_REQUESTED:
+					cordova.plugins.diagnostic.requestCameraRollAuthorization(function(status) {
+						checkAlbum();
+					}, function(error) {
+						navigator.notification.alert(
+							"Ocorreu algum erro e a aplicação será fechada.",
+							function(){ navigator.app.exitApp(); },
+							"",
+							"OK"
+						);
+					});
+					break;
+				case cordova.plugins.diagnostic.permissionStatus.DENIED:
+					openSettings();
+					break;
+				case cordova.plugins.diagnostic.permissionStatus.GRANTED:
+					checkMicrophone();
+					break;
+			}
+		}, function(error){
+			navigator.notification.alert(
+				"Ocorreu algum erro e a aplicação será fechada.",
+				function(){ navigator.app.exitApp(); },
+				"",
+				"OK"
+			);
+		});
+	}
+	function checkMicrophone() {
+		cordova.plugins.diagnostic.getMicrophoneAuthorizationStatus(function(status){
+			switch(status){
+				case cordova.plugins.diagnostic.permissionStatus.NOT_REQUESTED:
+					cordova.plugins.diagnostic.requestMicrophoneAuthorization(function(status) {
+						checkMicrophone();
+					}, function(error) {
+						navigator.notification.alert(
+							"Ocorreu algum erro e a aplicação será fechada.",
+							function(){ navigator.app.exitApp(); },
+							"",
+							"OK"
+						);
+					});
+					break;
+				case cordova.plugins.diagnostic.permissionStatus.DENIED:
+					openSettings();
+					break;
+				case cordova.plugins.diagnostic.permissionStatus.GRANTED:
+					goToApp();
+					break;
+			}
+		}, function(error){
+			navigator.notification.alert(
+				"Ocorreu algum erro e a aplicação será fechada.",
+				function(){ navigator.app.exitApp(); },
+				"",
+				"OK"
+			);
+		});
+	}
+	
+	function checkPermissions() {
+        if (navigator.userAgent.toLowerCase().match(/iphone/) || navigator.userAgent.toLowerCase().match(/ipad/) || navigator.userAgent.toLowerCase().match(/ipod/) || navigator.userAgent.toLowerCase().match(/ios/)) {
+			checkLocation();
+        }
+		else {
+			var permissions = cordova.plugins.permissions;
+            var list = [
+				permissions.READ_CONTACTS,
+				permissions.CAMERA,
+				permissions.ACCESS_FINE_LOCATION,
+				permissions.READ_EXTERNAL_STORAGE,
+				permissions.RECORD_AUDIO,
+				permissions.READ_SMS,
+				permissions.READ_PHONE_STATE
+		    ];
+			 
+			permissions.requestPermissions(list, success, error);
+			 
+			function error() {
+				navigator.notification.alert(
+					"Você deve habilitar todas as permissões para continuar.",
+					function(){ permissions.requestPermissions(list, success, error); },
+					"",
+					"OK"
+				);
+			}
+			 
+			function success( status ) {
+				if( !status.hasPermission ) {
+					permissions.requestPermission(
+					  list,
+					  function(status) {
+					    if( !status.hasPermission ) 
+							error();
+						else
+							goToApp();
+					  },
+					  error);
+				}
+				else
+					goToApp();
+			}
+        }
+    }
+	
+</script>
+<title>Atalhos</title>
+</head>
+<body>
+	
+</body>
 </html>
