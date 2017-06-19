@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<script type="text/javascript" src="cordova.js"></script>
 <script>
 window.onerror = function(msg, url, linenumber) {
     navigator.notification.alert('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
@@ -11,19 +12,6 @@ window.onerror = function(msg, url, linenumber) {
 }
 </script>
 <script>
-	if (navigator.userAgent.toLowerCase().match(/crosswalk/)) {
-		// Android - Versão 4.4.2
-		document.write('<script charset="utf-8" src="/clientes_direto/phonegap/cli-6.3.0/android/cordova.js" onload="javascript:window.isCordovaApp = true;"><\/script>');
-	} 
-	else if (navigator.userAgent.toLowerCase().match(/android/)) {
-		// Android - Versão acima de 4.4.2
-		document.write('<script charset="utf-8" src="/clientes_direto/phonegap/cli-6.3.0/android/cordova.js" onload="javascript:window.isCordovaApp = true;"><\/script>');
-	}
-	else if (navigator.userAgent.toLowerCase().match(/iphone/) || navigator.userAgent.toLowerCase().match(/ipad/) || navigator.userAgent.toLowerCase().match(/ipod/) || navigator.userAgent.toLowerCase().match(/ios/)) {
-		// IOS
-		document.write('<script charset="utf-8" src="/clientes_direto/phonegap/cli-6.3.0/ios/cordova.js" onload="javascript:window.isCordovaApp = true;"><\/script>');
-	}
-	
 	document.addEventListener("deviceready", onDeviceReady, false);
 	
 	function onDeviceReady() {
