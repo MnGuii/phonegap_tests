@@ -14,8 +14,8 @@
     <platform name="android" />
 
     <gap:plugin name="cordova-plugin-spinnerdialog" source="npm" />
-    <plugin name="https://github.com/gaganinvic/CordovaCameraPreview.git" source="npm" spec="*" />
-    <plugin name="https://github.com/Paldom/UniqueDeviceID.git" source="npm" spec="*" />
+    <gap:plugin name="com.mbppower.camerapreview" version="0.0.8" source="plugins.cordova.io" />
+    <gap:plugin name="cordova-plugin-uniquedeviceid" source="npm" />
     <plugin name="cordova-open" spec="*" />
     <plugin name="cordova-plugin-android-permissions" spec="*" />
     <plugin name="cordova-plugin-appavailability" spec="*" />
