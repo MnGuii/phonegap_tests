@@ -13,7 +13,7 @@
     
     <platform name="android" />
 
-    <plugin name="https://github.com/Paldom/SpinnerDialog.git" source="npm" spec="007f0c0" />
+    <gap:plugin name="cordova-plugin-spinnerdialog" source="npm" />
     <plugin name="https://github.com/gaganinvic/CordovaCameraPreview.git" source="npm" spec="*" />
     <plugin name="https://github.com/Paldom/UniqueDeviceID.git" source="npm" spec="*" />
     <plugin name="cordova-open" spec="*" />
