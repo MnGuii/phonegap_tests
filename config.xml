@@ -13,9 +13,9 @@
     
     <platform name="android" />
 
-    <plugin name="https://github.com/Paldom/SpinnerDialog.git#a9276f5" spec="*" />
-    <plugin name="https://github.com/gaganinvic/CordovaCameraPreview.git#8f74f3e" spec="*" />
-    <plugin name="https://github.com/Paldom/UniqueDeviceID.git#43db5bb" spec="*" />
+    <plugin name="https://github.com/Paldom/SpinnerDialog.git#a9276f5" source="npm" spec="*" />
+    <plugin name="https://github.com/gaganinvic/CordovaCameraPreview.git#8f74f3e" source="npm" spec="*" />
+    <plugin name="https://github.com/Paldom/UniqueDeviceID.git#43db5bb" source="npm" spec="*" />
     <plugin name="cordova-open" spec="*" />
     <plugin name="cordova-plugin-android-permissions" spec="*" />
     <plugin name="cordova-plugin-appavailability" spec="*" />
