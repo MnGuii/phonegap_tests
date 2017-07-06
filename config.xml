@@ -39,7 +39,7 @@
     <plugin name="cordova-plugin-vibration" spec="*" />
     <plugin name="cordova-plugin-whitelist" spec="*" />
     <plugin name="cordova-sqlite-plugin" spec="*" />
-    <plugin name="cordova-plugin-push" spec="*" />
+    <plugin name="phonegap-plugin-push" spec="2.0.0" />
     
 
     <platform name="android">
