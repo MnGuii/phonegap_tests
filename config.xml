@@ -13,11 +13,34 @@
     
     <platform name="android" />
 
-    <plugin name="cordova-plugin-whitelist" spec="*" />
+    <plugin name="https://github.com/Paldom/SpinnerDialog.git#a9276f5" spec="*" />
+    <plugin name="https://github.com/gaganinvic/CordovaCameraPreview.git#8f74f3e" spec="*" />
+    <plugin name="https://github.com/Paldom/UniqueDeviceID.git#43db5bb" spec="*" />
+    <plugin name="cordova-open" spec="*" />
+    <plugin name="cordova-plugin-android-permissions" spec="*" />
+    <plugin name="cordova-plugin-appavailability" spec="*" />
+    <plugin name="cordova-plugin-appversion" spec="*" />
+    <plugin name="cordova-plugin-camera" spec="*" />
+    <plugin name="cordova-plugin-contacts" spec="*" />
+    <plugin name="cordova-plugin-datepicker" spec="*" />
     <plugin name="cordova-plugin-device" spec="*" />
     <plugin name="cordova-plugin-dialogs" spec="*" />
-    <!-- <plugin name="cordova-custom-config" spec="*" /> -->
-    <plugin name="cordova.plugins.diagnostic" spec="2" />
+    <plugin name="cordova-plugin-file-transfer" spec="*" />
+    <plugin name="cordova-plugin-geolocation" spec="*" />
+    <plugin name="cordova-plugin-globalization" spec="*" />
+    <plugin name="cordova-plugin-media" spec="*" />
+    <plugin name="cordova-plugin-media-capture" spec="*" />
+    <plugin name="cordova-plugin-network-information" spec="*" />
+    <plugin name="cordova-plugin-screen-orientation" spec="*" />
+    <plugin name="cordova-plugin-sim" spec="*" />
+    <plugin name="cordova-plugin-sms" spec="*" />
+    <plugin name="cordova-plugin-splashscreen" spec="*" />
+    <plugin name="cordova-plugin-statusbar" spec="*" />
+    <plugin name="cordova-plugin-vibration" spec="*" />
+    <plugin name="cordova-plugin-whitelist" spec="*" />
+    <plugin name="cordova-sqlite-plugin" spec="*" />
+    <plugin name="cordova-plugin-push" spec="*" />
+    
 
     <platform name="android">
         <preference name="android-minSdkVersion" value="20" /> <!-- For BODY_SENSORS permission -->
